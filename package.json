@@ -1,0 +1,30 @@
+{
+  "name": "express-packages",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "npm run start --prefix",
+    "bootstrap": "lerna bootstrap",
+    "postinstall": "npm run bootstrap",
+    "clean": "rimraf packages/**/lib",
+    "build": "npm run clean && lerna run build --stream",
+    "publish": "lerna publish --yes"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/corlogix/express-packages.git"
+  },
+  "author": "corlogixco@gmail.com",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/corlogix/express-packages/issues"
+  },
+  "homepage": "https://github.com/corlogix/express-packages#readme",
+  "devDependencies": {
+    "@pragmatics/conventional-changelog-preset": "^1.1.1",
+    "@types/node": "^16.9.2",
+    "lerna": "^4.0.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.4.3",
+    "vite": "^2.6.2"
+  }
+}
