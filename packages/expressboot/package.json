@@ -1,6 +1,6 @@
 {
   "name": "expressboot",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
@@ -18,11 +18,5 @@
   "bugs": {
     "url": "https://github.com/corlogix/express-packages/issues"
   },
-  "homepage": "https://github.com/corlogix/express-packages#readme",
-  "dependencies": {
-  },
-  "devDependencies": {
-  },
-  "peerDependencies": {
-  }
+  "homepage": "https://github.com/corlogix/express-packages#readme"
 }
