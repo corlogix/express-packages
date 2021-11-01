@@ -52,4 +52,7 @@ jobs:
 
       # PUBLISH
       - name: Publish Packages
-        run: npm run publish
+        run: /
+          cat .npmrc
+          npm whoami
+          npm run publish
