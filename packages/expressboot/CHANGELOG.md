@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.3](https://github.com/corlogix/express-packages/compare/expressico@0.0.2...expressico@0.0.3) (2021-11-01)
+
+
+### Bug Fixes
+
+* bump ([0aa56cc](https://github.com/corlogix/express-packages/commit/0aa56cc4d9ee935d8a73ef0e0ca059e4432098c0))
+
+
+
+
+
 ## 0.0.2 (2021-11-01)
 
 
