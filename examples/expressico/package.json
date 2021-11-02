@@ -1,16 +1,11 @@
 {
-  "name": "expressico",
-  "version": "0.0.1",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
-  "files": [
-    "CHANGELOG.md",
-    "README.md",
-    "lib/"
-  ],
+  "name": "expressico-example",
+  "version": "0.0.2",
+  "private": true,
   "scripts": {
-    "build": "tsc",
-    "start": "tsc -w"
+    "start": "npm-run-all --parallel start:server start:nodemon",
+    "start:server": "webpack --config webpack.config.js --watch",
+    "start:nodemon": "nodemon ./dist/server.js --watch ./dist"
   },
   "repository": {
     "type": "git",
@@ -26,10 +21,6 @@
   },
   "homepage": "https://github.com/corlogix/express-packages#readme",
   "dependencies": {
-    "chalk": "^4.1.2",
-    "compression": "^1.7.4",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "nanoid": "^3.1.30"
+    "expressico": "0.0.1"
   }
 }
