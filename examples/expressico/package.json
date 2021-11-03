@@ -1,6 +1,6 @@
 {
   "name": "expressico-example",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "start": "npm-run-all --parallel start:server start:nodemon",
@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/corlogix/express-packages#readme",
   "dependencies": {
-    "expressico": "0.1.0"
+    "expressico": "0.2.0"
   }
 }
