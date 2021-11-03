@@ -1,0 +1,36 @@
+{
+  "name": "expressico-auth",
+  "version": "0.0.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "CHANGELOG.md",
+    "README.md",
+    "lib/"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/corlogix/express-packages.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "corlogixco@gmail.com",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/corlogix/express-packages/issues"
+  },
+  "homepage": "https://github.com/corlogix/express-packages/blob/main/packages/expressico-auth/README.md",
+  "dependencies": {
+  }, 
+  "devDependencies": {
+    "expressico": "^0.3.0"
+  },
+  "peerDependencies": {
+    "expressico": ">=0.3.0"
+  }
+}

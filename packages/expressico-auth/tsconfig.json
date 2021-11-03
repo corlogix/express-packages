@@ -1,0 +1,8 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+      "outDir": "./lib",
+  },
+  "include": ["src/**/*.ts", "src/expressico.d.ts"],
+  "exclude": ["./node_modules", "../../node_modules"]
+}
