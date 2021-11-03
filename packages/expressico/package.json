@@ -24,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/corlogix/express-packages/issues"
   },
-  "homepage": "https://github.com/corlogix/express-packages#readme",
+  "homepage": "https://github.com/corlogix/express-packages/blob/main/packages/expressico/README.md",
   "dependencies": {
     "chalk": "^4.1.2",
     "compression": "^1.7.4",

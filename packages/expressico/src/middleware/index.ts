@@ -1,45 +1,40 @@
-import { Express, RequestHandler } from "express";
-import configure from '../configure';
-import useControllers from './controllers';
-import { enforceHttps } from './https';
-import { allowLocalhostCors } from './localhost';
-import { parseJsonRequests } from './parse';
-import { useStatic } from './public';
-import { handleOptionRequests } from './request';
-import { compressResponses, createHelfullResponses } from './response';
+import { Express } from "express";
+import context from '../context';
+import { consumeMiddleware, ExpressicoMiddleware } from './define';
+import useLocalhostCors from './useLocalhostCors';
+import useEnforcedHttps from './useEnforcedHttps';
+import useJsonParsing from './useJsonParsing';
+import useHelpfulResponses from './useHelpfulResponses';
+import useControllers from './useControllers';
+import useStatic from './useStatic';
 
-export const defineMiddleware = (handler: RequestHandler) => handler;
+export * from "./define";
+
 
 export {
-  enforceHttps,
-  allowLocalhostCors,
-  parseJsonRequests,
-  useStatic,
-  handleOptionRequests,
-  compressResponses,
-  createHelfullResponses
+  useLocalhostCors,
+  useEnforcedHttps,
+  useJsonParsing,
+  useHelpfulResponses,
+  useControllers,
+  useStatic
 }
 
 export default function middleware(app: Express) {
-  !!configure?.middleware?.length && configure.middleware.forEach(handler => {
-    app.use(handler);
-  });
+  
+  const defaultMiddleware: ExpressicoMiddleware[] = [
+    useLocalhostCors,
+    useEnforcedHttps,
+    useJsonParsing,
+    useHelpfulResponses,
+    ...(context.middleware || []),
+    useControllers({
+      controllers: context?.controllers,
+      verbose: true,
+    }),
+    useStatic
+  ];
 
-  app.use(allowLocalhostCors);
+  consumeMiddleware(app, defaultMiddleware);
 
-  app.use(enforceHttps);
-
-  app.use(handleOptionRequests);
-
-  app.use(createHelfullResponses);
-
-  app.use(parseJsonRequests);
-  app.use(compressResponses);
-
-  app.use(parseJsonRequests());
-
-  app.use(useControllers(configure?.controllers || [], true))
-
-  app.use(useStatic());
-  app.use("/**", useStatic());  
 };

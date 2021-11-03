@@ -1,10 +1,10 @@
 import chalk from 'chalk';
 import express from 'express';
-import configure, { ExpressicoConfiguration } from './configure';
+import context, { ExpressicoConfiguration } from './context';
 import middleware from './middleware';
 import { BANNER } from './utils/banner';
 
-export { defineConfig } from "./configure";
+export { defineConfig } from "./context";
 
 export * from "./controllers";
 export * from "./middleware";
@@ -20,20 +20,21 @@ declare global {
 
 export default {
   start: function(config?: ExpressicoConfiguration) {
+    const app = express();
+    context.setApp(app);
+
     console.log(BANNER());
     
     if(config) {
-      configure.loadConfig(config);
-      console.log("configuration loaded", "::", {...configure})
+      context.loadConfig(config);
+      console.log("configuration loaded", "::", {...context, _app: "initialized"})
       console.log();
     }
 
 
-    const app = express();
-    
     middleware(app);
     
-    const port = 8080;
+    const port = context?.port || 8080;
 
     const server = app.listen(port, () => {
       console.info(

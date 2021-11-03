@@ -1,6 +1,6 @@
-import { createController } from 'expressico';
+import { defineController } from 'expressico';
 
-const controller = createController({
+const controller = defineController({
   path: "/api/actuator"
 });
 

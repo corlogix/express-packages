@@ -1,17 +1,22 @@
-import { RequestHandler } from 'express';
+import { RequestHandler, Express } from 'express';
+import { ExpressicoMiddleware } from '..';
 import { Controller } from '../controllers';
 
 export interface ExpressicoConfiguration {
-  debug?: boolean;
+  port?: number;
   enforceHttps?: boolean;
-  middleware?: RequestHandler[];
-  controllers?: Controller[]
+  middleware?: ExpressicoMiddleware[];
+  controllers?: Controller[];
+  staticPath?: string;
 }
 
 export class Configuration implements ExpressicoConfiguration {
-  debug: ExpressicoConfiguration["debug"] = false;
+  port: ExpressicoConfiguration["port"] = 8080;
   middleware: ExpressicoConfiguration["middleware"] = [];
   controllers: ExpressicoConfiguration["controllers"] = [];
+  staticPath: ExpressicoConfiguration["staticPath"] = "dist/public"; 
+
+  _app: Express = null;
   constructor() {
     
   }
@@ -20,6 +25,13 @@ export class Configuration implements ExpressicoConfiguration {
     for (const key in config) {
       this[key] = config[key];
     }
+  }
+
+  public setApp(app: Express) {
+    this._app = app;
+  }
+  public getApp() {
+    return this._app;
   }
 }
 
