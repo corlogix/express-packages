@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.0](https://github.com/corlogix/express-packages/compare/expressico-example@0.2.0...expressico-example@0.3.0) (2021-11-03)
+
+
+### Features
+
+* rework middleware consumtion ([b6f9c1a](https://github.com/corlogix/express-packages/commit/b6f9c1abdc6d3db089fca655fe65df5e175cebfa))
+
+
+
+
+
 ## [0.2.0](https://github.com/corlogix/express-packages/compare/expressico-example@0.1.0...expressico-example@0.2.0) (2021-11-03)
 
 
