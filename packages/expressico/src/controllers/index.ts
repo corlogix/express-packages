@@ -1,3 +1,3 @@
 
-export * from "./createController";
+export * from "./defineController";
 export * from "./types";

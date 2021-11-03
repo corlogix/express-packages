@@ -7,7 +7,7 @@ import { BANNER } from './utils/banner';
 export { defineConfig } from "./configure";
 
 export * from "./controllers";
-
+export * from "./middleware";
 
 declare global {
   namespace Express {

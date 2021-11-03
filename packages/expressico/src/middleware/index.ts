@@ -1,4 +1,4 @@
-import { Express } from "express";
+import { Express, RequestHandler } from "express";
 import configure from '../configure';
 import useControllers from './controllers';
 import { enforceHttps } from './https';
@@ -8,8 +8,20 @@ import { useStatic } from './public';
 import { handleOptionRequests } from './request';
 import { compressResponses, createHelfullResponses } from './response';
 
+export const defineMiddleware = (handler: RequestHandler) => handler;
+
+export {
+  enforceHttps,
+  allowLocalhostCors,
+  parseJsonRequests,
+  useStatic,
+  handleOptionRequests,
+  compressResponses,
+  createHelfullResponses
+}
+
 export default function middleware(app: Express) {
-  configure?.middleware && configure.middleware.forEach(handler => {
+  !!configure?.middleware?.length && configure.middleware.forEach(handler => {
     app.use(handler);
   });
 

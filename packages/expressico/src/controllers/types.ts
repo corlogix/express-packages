@@ -32,7 +32,7 @@ export type Controller = {
    * @param route 
    */
   add(...route: ControlledRoute[]): void;
-  export(router: Router): void;
+  _export(router: Router): void;
 };
 
 export type ControllerOptions = {

@@ -1,5 +1,4 @@
 import { Router } from 'express';
-import { isArray, each } from 'lodash';
 import { ControlledRoute, ControllerOptions, Controller, ControllerContext } from './types';
 import { sanitizePath } from '../utils';
 
@@ -7,11 +6,11 @@ const defaultOptions: ControllerOptions = {
   path: '/'
 };
 
-export function createController(routes?: ControlledRoute[], options?: ControllerOptions): Controller;
-export function createController(options?: ControllerOptions): Controller;
-export function createController(a?: any, b?: any): Controller {
-  const routes: ControlledRoute[] = isArray(a) ? a : [];
-  let options: ControllerOptions = isArray(a) ? b : a;
+export function defineController(routes?: ControlledRoute[], options?: ControllerOptions): Controller;
+export function defineController(options?: ControllerOptions): Controller;
+export function defineController(a?: any, b?: any): Controller {
+  const routes: ControlledRoute[] = Array.isArray(a) ? a : [];
+  let options: ControllerOptions = Array.isArray(a) ? b : a;
 
   options = options
     ? { ...defaultOptions, ...options }
@@ -33,11 +32,12 @@ export function createController(a?: any, b?: any): Controller {
         context.push(route);
       }
     },
-    export: (router: Router): void => {
-      each(context, route => {
+    _export: (router: Router): void => {
+      for (const key in context) {
+        const route = context[key];
         const handlers: any[] = [ ];
         if (route.before && route.before.length > 0) {
-          handlers.push(route.before);
+          handlers.push(...route.before);
         }
         handlers.push(route.handler);
   
@@ -50,7 +50,7 @@ export function createController(a?: any, b?: any): Controller {
         if (router[route.method]) {
           router[route.method](route.path, handlers)
         }
-      });
+      }
     }
   };
 }

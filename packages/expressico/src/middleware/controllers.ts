@@ -1,6 +1,5 @@
 import chalk from 'chalk';
 import express, { Router } from 'express';
-import { toUpper } from 'lodash';
 import { Controller } from '../controllers/types'
 
 /**
@@ -19,12 +18,14 @@ export default function useControllers(controllers: Controller[], verbose?: bool
   const router = express.Router();
   
   for(const controller of controllers) {
-    controller.export(router);
+    controller._export(router);
   }
 
   if(verbose) {
     console.log(chalk`{yellowBright.bold Loading route controllers...}`);
     
+    const toUpper = (str: string) => (str || "").toUpperCase(); 
+
     router.stack
       .forEach(
         ({route}) => console.log(chalk`  {whiteBright.bold ${Object.keys(route.methods).map(toUpper)}} {white ${route.path}}`)
