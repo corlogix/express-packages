@@ -1,0 +1,1 @@
+# Expressico! Auth! [![Build](https://github.com/corlogix/express-packages/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/corlogix/express-packages/actions/workflows/build.yml) [![npm version](https://badge.fury.io/js/expressico-auth.svg)](https://badge.fury.io/js/expressico-auth)

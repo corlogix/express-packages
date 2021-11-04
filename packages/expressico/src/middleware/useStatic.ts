@@ -23,6 +23,6 @@ export default defineMiddleware({
     const app = context.getApp();
     const staticPath = path.resolve(context.staticPath);
     app.use("/**", express.static(staticPath));
-    console.log(chalk`      {cyan Static files will be served from '${context.staticPath}.'}`)
+    console.log(chalk`      {cyan Static files will be served from '${context.staticPath}'}`)
   }
 })

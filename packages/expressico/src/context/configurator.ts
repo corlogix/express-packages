@@ -12,6 +12,7 @@ export interface ExpressicoConfiguration {
 
 export class Configuration implements ExpressicoConfiguration {
   port: ExpressicoConfiguration["port"] = 8080;
+  enforceHttps:  ExpressicoConfiguration["enforceHttps"] = true;
   middleware: ExpressicoConfiguration["middleware"] = [];
   controllers: ExpressicoConfiguration["controllers"] = [];
   staticPath: ExpressicoConfiguration["staticPath"] = "dist/public"; 

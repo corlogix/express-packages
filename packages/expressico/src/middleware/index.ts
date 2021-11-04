@@ -7,6 +7,7 @@ import useJsonParsing from './useJsonParsing';
 import useHelpfulResponses from './useHelpfulResponses';
 import useControllers from './useControllers';
 import useStatic from './useStatic';
+import useCompression from './useCompression';
 
 export * from "./define";
 
@@ -15,6 +16,7 @@ export {
   useLocalhostCors,
   useEnforcedHttps,
   useJsonParsing,
+  useCompression,
   useHelpfulResponses,
   useControllers,
   useStatic
@@ -26,6 +28,7 @@ export default function middleware(app: Express) {
     useLocalhostCors,
     useEnforcedHttps,
     useJsonParsing,
+    useCompression,
     useHelpfulResponses,
     ...(context.middleware || []),
     useControllers({
