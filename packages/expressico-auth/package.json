@@ -1,6 +1,6 @@
 {
   "name": "expressico-auth",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
@@ -26,14 +26,14 @@
   },
   "homepage": "https://github.com/corlogix/express-packages/blob/main/packages/expressico-auth/README.md",
   "dependencies": {
-    "jsonwebtoken": "^8.5.1",
     "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^8.5.1",
     "nanoid": "^3.1.30"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
     "@types/jsonwebtoken": "^8.5.5",
-    "expressico": "0.3.1"
+    "expressico": "0.3.2"
   },
   "peerDependencies": {
     "expressico": ">=0.3.1"
