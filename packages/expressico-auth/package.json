@@ -1,6 +1,6 @@
 {
   "name": "expressico-auth",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
@@ -33,9 +33,9 @@
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
     "@types/jsonwebtoken": "^8.5.5",
-    "expressico": "^0.3.0"
+    "expressico": "0.3.1"
   },
   "peerDependencies": {
-    "expressico": ">=0.3.0"
+    "expressico": ">=0.3.1"
   }
 }
