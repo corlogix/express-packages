@@ -25,7 +25,14 @@
     "url": "https://github.com/corlogix/express-packages/issues"
   },
   "homepage": "https://github.com/corlogix/express-packages/blob/main/packages/expressico-auth/README.md",
+  "dependencies": {
+    "jsonwebtoken": "^8.5.1",
+    "bcryptjs": "^2.4.3",
+    "nanoid": "^3.1.30"
+  },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/jsonwebtoken": "^8.5.5",
     "expressico": "^0.3.0"
   },
   "peerDependencies": {
