@@ -11,7 +11,6 @@ import useCompression from './useCompression';
 
 export * from "./define";
 
-
 export {
   useLocalhostCors,
   useEnforcedHttps,

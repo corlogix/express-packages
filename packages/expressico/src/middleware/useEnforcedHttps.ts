@@ -1,4 +1,3 @@
-import { RequestHandler } from 'express';
 import context from '../context';
 import { defineMiddleware } from './define';
 
