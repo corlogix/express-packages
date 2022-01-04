@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.0](https://github.com/corlogix/express-packages/compare/expressico-auth@0.1.0...expressico-auth@0.2.0) (2022-01-04)
+
+
+### Features
+
+* cleanup ([fcefd16](https://github.com/corlogix/express-packages/commit/fcefd16897fd901164633eeef4e883256261452b))
+
+
+
+
+
 ## [0.1.0](https://github.com/corlogix/express-packages/compare/expressico-auth@0.0.2...expressico-auth@0.1.0) (2021-11-06)
 
 
